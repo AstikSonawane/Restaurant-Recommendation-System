@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-from matplotlib import pyplot as plt
+
 from PIL import Image
 #img = Image.open('image.png')
 # Define HTML/CSS style with background image
@@ -64,7 +63,7 @@ st.markdown(html_style, unsafe_allow_html=True)
 st.title("Restaurant Recommendation System")
 
 # Data reading
-data = pd.read_csv(r'C:\Users\HOME\Desktop\DSA\Project\resto.csv', delimiter='|')
+data = pd.read_csv(r'resto.csv', delimiter='|')
 
 # Displaying No of rows X No of Columns
 #st.write("Data Shape:", data.shape)
