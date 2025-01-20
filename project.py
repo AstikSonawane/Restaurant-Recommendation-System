@@ -4,21 +4,24 @@ import pandas as pd
 from PIL import Image
 #img = Image.open('image.png')
 # Define HTML/CSS style with background image
+import streamlit as st
+
+# Define HTML/CSS style with background image and title styling
 html_style = """
 <style>
-    [data-testid="stAppViewContainer"]{
+    [data-testid="stAppViewContainer"] {
         background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
-        background-size: cover; /* Scale the background image to be as large as possible */
-        background-position: center; /* Center the background image */
-        height: 100%; /* Set height to 100% to cover the whole page */
+        background-size: cover;
+        background-position: center;
+        height: 100%;
     }
 
-    /* Title CSS */
-    .css-1v0mbdj.e16nr0p32 {
-        color: white; /* Set the title font color to white */
+    /* Styling the title text */
+    .css-18e3th9 {
+        color: white !important;
+        font-size: 36px !important;
     }
 
-    /* CSS styling for other elements */
     body {
         font-family: Times New Roman, Serif;
         color: #ffffff;
@@ -54,6 +57,7 @@ st.markdown(html_style, unsafe_allow_html=True)
 
 # Render Streamlit content
 st.title("Restaurant Recommendation System")
+
 
 
 # Data reading
