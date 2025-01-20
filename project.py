@@ -68,7 +68,7 @@ html_style = """
 st.markdown(html_style, unsafe_allow_html=True)
 
 # Render Streamlit content
-st.title("Restaurant Recommendation System") change the tittle font color to white
+st.title("Restaurant Recommendation System")
 
 # Data reading
 data = pd.read_csv(r'resto.csv', delimiter='|')
