@@ -7,51 +7,44 @@ from PIL import Image
 html_style = """
 <style>
     [data-testid="stAppViewContainer"]{
-    background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
-            background-size: cover; /* Scale the background image to be as large as possible */
+        background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
+        background-size: cover; /* Scale the background image to be as large as possible */
         background-position: center; /* Center the background image */
         height: 100%; /* Set height to 100% to cover the whole page */
     }
+
+    /* Title CSS */
+    .css-1v0mbdj.e16nr0p32 {
+        color: white; /* Set the title font color to white */
     }
 
-    /* CSS styling goes here */
+    /* CSS styling for other elements */
     body {
         font-family: Times New Roman, Serif;
-        /* Set background image */
-        #background-image: url('https://media.timeout.com/images/106001846/1024/576/image.webp');
-        /* Set background size */
-        background-size: cover;
-        /* Set background position */
-        background-position: center;
-      
-        /* Set font color to black */
         color: #ffffff;
     }
 
     .container {
-        opacity:0.9;
+        opacity: 0.9;
         padding: 20px;
         border: 1px solid #ffffff;
         border-radius: 5px;
         background-color: #ffffff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        
     }
 
     h1 {
-        opacity:0.9;
+        opacity: 0.9;
         color: #ffffff;
         font-size: 30px;
         margin-bottom: 20px;
-        
     }
 
     p {
-        opacity:0.9;
+        opacity: 0.9;
         color: #ffffff;
         font-size: 50px;
         line-height: 1.5;
-        
     }
 </style>
 """
@@ -61,6 +54,7 @@ st.markdown(html_style, unsafe_allow_html=True)
 
 # Render Streamlit content
 st.title("Restaurant Recommendation System")
+
 
 # Data reading
 data = pd.read_csv(r'resto.csv', delimiter='|')
