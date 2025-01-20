@@ -6,48 +6,60 @@ from PIL import Image
 # Define HTML/CSS style with background image
 import streamlit as st
 
-# Define HTML/CSS style with background image and title styling
+import streamlit as st
+import pandas as pd
+
+from PIL import Image
+#img = Image.open('image.png')
+# Define HTML/CSS style with background image
 html_style = """
 <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
-        background-size: cover;
-        background-position: center;
-        height: 100%;
+    [data-testid="stAppViewContainer"]{
+    background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
+            background-size: cover; /* Scale the background image to be as large as possible */
+        background-position: center; /* Center the background image */
+        height: 100%; /* Set height to 100% to cover the whole page */
+    }
     }
 
-    /* Styling the title text */
-    .css-18e3th9 {
-        color: white !important;
-        font-size: 36px !important;
-    }
-
+    /* CSS styling goes here */
     body {
         font-family: Times New Roman, Serif;
+        /* Set background image */
+        #background-image: url('https://media.timeout.com/images/106001846/1024/576/image.webp');
+        /* Set background size */
+        background-size: cover;
+        /* Set background position */
+        background-position: center;
+      
+        /* Set font color to black */
         color: #ffffff;
     }
 
     .container {
-        opacity: 0.9;
+        opacity:0.9;
         padding: 20px;
         border: 1px solid #ffffff;
         border-radius: 5px;
         background-color: #ffffff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
     }
 
     h1 {
-        opacity: 0.9;
+        opacity:0.9;
         color: #ffffff;
         font-size: 30px;
         margin-bottom: 20px;
+        
     }
 
     p {
-        opacity: 0.9;
+        opacity:0.9;
         color: #ffffff;
         font-size: 50px;
         line-height: 1.5;
+        
     }
 </style>
 """
@@ -56,9 +68,7 @@ html_style = """
 st.markdown(html_style, unsafe_allow_html=True)
 
 # Render Streamlit content
-st.title("Restaurant Recommendation System")
-
-
+st.title("Restaurant Recommendation System") change the tittle font color to white
 
 # Data reading
 data = pd.read_csv(r'resto.csv', delimiter='|')
