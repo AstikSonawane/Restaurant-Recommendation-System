@@ -3,63 +3,44 @@ import pandas as pd
 
 from PIL import Image
 #img = Image.open('image.png')
-# Define HTML/CSS style with background image
-import streamlit as st
 
-import streamlit as st
-import pandas as pd
-
-from PIL import Image
-#img = Image.open('image.png')
 # Define HTML/CSS style with background image
 html_style = """
 <style>
     [data-testid="stAppViewContainer"]{
-    background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
-            background-size: cover; /* Scale the background image to be as large as possible */
-        background-position: center; /* Center the background image */
-        height: 100%; /* Set height to 100% to cover the whole page */
-    }
+        background-image: url('https://images.unsplash.com/photo-1599458252573-56ae36120de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmluZSUyMGRpbmluZyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy');
+        background-size: cover;
+        background-position: center;
+        height: 100%;
     }
 
-    /* CSS styling goes here */
+    /* Ensure title color is always white */
+    h1 {
+        color: white !important;
+        font-size: 36px;
+        opacity: 1;
+    }
+
     body {
         font-family: Times New Roman, Serif;
-        /* Set background image */
-        #background-image: url('https://media.timeout.com/images/106001846/1024/576/image.webp');
-        /* Set background size */
-        background-size: cover;
-        /* Set background position */
-        background-position: center;
-      
-        /* Set font color to black */
-        color: #ffffff;
+        background-color: transparent;
+        color: #ffffff; /* Default text color */
     }
 
     .container {
-        opacity:0.9;
+        opacity: 0.9;
         padding: 20px;
         border: 1px solid #ffffff;
         border-radius: 5px;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        
-    }
-
-    h1 {
-        opacity:0.9;
-        color: #ffffff;
-        font-size: 30px;
-        margin-bottom: 20px;
-        
     }
 
     p {
-        opacity:0.9;
         color: #ffffff;
         font-size: 50px;
         line-height: 1.5;
-        
+        opacity: 0.9;
     }
 </style>
 """
@@ -69,6 +50,7 @@ st.markdown(html_style, unsafe_allow_html=True)
 
 # Render Streamlit content
 st.title("Restaurant Recommendation System")
+
 
 # Data reading
 data = pd.read_csv(r'resto.csv', delimiter='|')
